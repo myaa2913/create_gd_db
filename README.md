@@ -3,8 +3,8 @@
 1. run preprocess_csv.py to remove problematic characters (ex. line breaks) from the csv file.
 
 2. run create_db.sql.
-  1. uploads the columns I need to a placeholder sql table (raw)
-  2. test  
+  * uploads the columns I need to a placeholder sql table (raw)
+  * test  
 
 
 ######Cleaning notes: there are a few reviewId==-1 that need to be removed, as well as some duplicates reviewIds
