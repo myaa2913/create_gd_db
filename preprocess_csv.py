@@ -70,7 +70,7 @@ def extract():
                        row[22],
                        row[23],
                        row[24],
-                       row[28],
+                       row[25],
                        row[29],
                        row[31],
                        row[32],

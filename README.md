@@ -18,6 +18,7 @@ pros TEXT
 cons TEXT
 
 
+
 #####review_ratings
 
 reviewid numeric
@@ -35,7 +36,10 @@ worklife numeric
 culturevalues numeric
 
 
+
 #####user_chars
+
+reviewid numeric
 
 userid numeric
 
@@ -45,16 +49,29 @@ birthyear text
 
 highesteducation text
 
+jobtitleid numeric
+
 jobtitle text
+
+goc text
+
+gocconfidence numeric
+
+mgoc text
+
+mgocconfidence numeric
 
 iscurrentjobflag smallint
 
 jobendingyear smallint
 
 
+
 #####firm_chars
 
 employerid numeric
+
+year date
 
 employername text
 
@@ -73,4 +90,7 @@ sector text
 
 employerid numeric
 
+reviewid numeric
+
+userid numeric
 
