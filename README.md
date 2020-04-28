@@ -1,4 +1,4 @@
-###### This file details the structure of the Glassdoor sql database.
+##### This file details the structure of the Glassdoor sql database.
 
 1. run preprocess_csv.py to remove problematic characters (ex. line breaks) from the csv file.
 
@@ -9,39 +9,68 @@
 
 ######Cleaning notes: there are a few reviewId==-1 that need to be removed, as well as some duplicates reviewIds
 
-  * reviewProCon
+#####review_pro_con
 
-reviewId numeric,
+reviewid numeric
 
-pros TEXT,
+pros TEXT
 
 cons TEXT
 
-  * reviewFeedback
 
-reviewId numeric,
+#####review_ratings
 
-feedback TEXT
+reviewid numeric
 
-  * reviewRatings
+overallrating numeric
 
-reviewId numeric,
+careeropps numeric
 
-OverallRating numeric,
+compensationbenefits numeric
 
-CareerOpps numeric,
+seniorleadership numeric
 
-CompensationBenefits numeric,
+worklife numeric
 
-SeniorLeadership numeric,
+culturevalues numeric
 
-Worklife numeric,
 
-CultureValues numeric,
+#####user_chars
 
-RecommendFriend varchar(3),
+userid numeric
 
-BusinessOutlook 27,
+gender text
 
-CEO 28,
+birthyear text
+
+highesteducation text
+
+jobtitle text
+
+iscurrentjobflag smallint
+
+jobendingyear smallint
+
+
+#####firm_chars
+
+employerid numeric
+
+employername text
+
+employertypecode text
+
+numberemployees numeric
+
+annualrevenue numeric
+
+industry text
+
+sector text
+
+
+#####crosswalk
+
+employerid numeric
+
 

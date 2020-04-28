@@ -26,7 +26,6 @@ def extract():
               'SeniorLeadership',
               'Worklife',
               'CultureValues',
-              'CEO',
               'employerName',
               'employerTypeCode',
               'numberEmployees',
@@ -34,8 +33,7 @@ def extract():
               'industry',
               'sector',
               'pros',
-              'cons',
-              'feedback']
+              'cons']
     
     masterFile = open("/project/def-mcorrito/mcorrito/reviews_external_stanford.csv",'rU')
     newFile = open("/project/def-mcorrito/mcorrito/gd_preprocess.csv",'w')
@@ -72,7 +70,6 @@ def extract():
                        row[22],
                        row[23],
                        row[24],
-                       row[25],
                        row[28],
                        row[29],
                        row[31],
@@ -81,19 +78,18 @@ def extract():
                        row[34],
                        row[35],
                        row[36],
-                       row[37],
-                       row[38]]
+                       row[37]]
             
             write.writerow(dataRow)
 
     masterFile.close()
     newFile.close()
 
-extract()
+def main():    
+    extract()
 
-
-
-
+if __name__ == "__main__":
+    main()
 
 
 
