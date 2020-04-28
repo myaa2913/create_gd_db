@@ -7,9 +7,9 @@
   * test  
 
 
-######Cleaning notes: there are a few reviewId==-1 that need to be removed, as well as some duplicates reviewIds
+###### Cleaning notes: there are a few reviewId==-1 that need to be removed, as well as some duplicates reviewIds
 
-#####review_pro_con
+##### review_pro_con
 
 reviewid numeric
 
@@ -19,7 +19,7 @@ cons TEXT
 
 
 
-#####review_ratings
+##### review_ratings
 
 reviewid numeric
 
@@ -37,7 +37,7 @@ culturevalues numeric
 
 
 
-#####user_chars
+##### user_chars
 
 reviewid numeric
 
@@ -67,7 +67,7 @@ jobendingyear smallint
 
 
 
-#####firm_chars
+##### firm_chars
 
 employerid numeric
 
@@ -86,7 +86,7 @@ industry text
 sector text
 
 
-#####crosswalk
+##### crosswalk
 
 employerid numeric
 
