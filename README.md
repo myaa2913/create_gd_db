@@ -11,7 +11,9 @@
 
 ##### review_pro_con
 
-reviewid numeric
+reviewid numeric NOT NULL
+
+userid numeric NOT NULL
 
 pros TEXT
 
@@ -21,7 +23,9 @@ cons TEXT
 
 ##### review_ratings
 
-reviewid numeric
+reviewid numeric NOT NULL
+
+userid numeric NOT NULL
 
 overallrating numeric
 
