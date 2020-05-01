@@ -139,3 +139,54 @@
 -- SET h_within_ind_40_f_annual_new = EXCLUDED.h_within_ind_40_f_annual_new; 
 
 -- DROP TABLE cult_measure;
+
+
+
+
+--NOTE: add 2016 annual JS/interpersonal diversity measure for the full set of glassdoor firms
+ALTER TABLE firm_chars
+ADD COLUMN js_500_f_annual_old_expand numeric,
+ADD COLUMN nr_500_f_annual_old_expand numeric;
+
+CREATE TABLE cult_measure (
+    employerid numeric,
+    year numeric,
+    js_500_f_annual_old_expand numeric,
+    nr_500_f_annual_old_expand numeric
+);
+
+\copy cult_measure FROM '~/projects/def-mcorrito/mcorrito/create_gd_db/cult_measure_upload/JS_measures_combined_annual_expand.csv' DELIMITER ',' quote '"' CSV HEADER;
+
+INSERT INTO firm_chars(employerid,year,js_500_f_annual_old_expand, nr_500_f_annual_old_expand) 
+SELECT employerid, year, js_500_f_annual_old_expand, nr_500_f_annual_old_expand
+FROM cult_measure 
+ON CONFLICT (employerid,year)
+DO UPDATE
+SET js_500_f_annual_old_expand = EXCLUDED.js_500_f_annual_old_expand, nr_500_f_annual_old_expand = EXCLUDED.nr_500_f_annual_old_expand; 
+
+DROP TABLE cult_measure;
+
+
+
+--NOTE: add 2016 annual JS/interpersonal diversity measure for the full set of glassdoor firms (alternate version: highly correlated but unclear to me why it's different)
+ALTER TABLE firm_chars
+ADD COLUMN js_500_f_annual_old_expand_updt numeric,
+ADD COLUMN nr_500_f_annual_old_expand_updt numeric;
+
+CREATE TABLE cult_measure (
+    employerid numeric,
+    year numeric,
+    js_500_f_annual_old_expand_updt numeric,
+    nr_500_f_annual_old_expand_updt numeric
+);
+
+\copy cult_measure FROM '~/projects/def-mcorrito/mcorrito/create_gd_db/cult_measure_upload/JS_measures_combined_annual_expand_updt.csv' DELIMITER ',' quote '"' CSV HEADER;
+
+INSERT INTO firm_chars(employerid,year,js_500_f_annual_old_expand_updt, nr_500_f_annual_old_expand_updt) 
+SELECT employerid, year, js_500_f_annual_old_expand_updt, nr_500_f_annual_old_expand_updt
+FROM cult_measure 
+ON CONFLICT (employerid,year)
+DO UPDATE
+SET js_500_f_annual_old_expand_updt = EXCLUDED.js_500_f_annual_old_expand_updt, nr_500_f_annual_old_expand_updt = EXCLUDED.nr_500_f_annual_old_expand_updt; 
+
+DROP TABLE cult_measure;
