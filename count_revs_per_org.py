@@ -46,6 +46,7 @@ if conn!=None:
                               employerid\
                        INTO temp_num_reviews\
                        FROM review_pro_con\
+                       WHERE NULLIF(trim(from pros),'') IS NOT NULL\
                        GROUP BY employerid,
                                 year""")
         conn.commit()
@@ -70,4 +71,4 @@ if conn!=None:
 conn.close()
 
 
-#                       WHERE NULLIF(trim(from pros),'') IS NOT NULL\
+
